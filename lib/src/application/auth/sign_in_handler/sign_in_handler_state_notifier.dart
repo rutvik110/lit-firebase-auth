@@ -54,19 +54,14 @@ class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
       state = state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        authFailureOrSuccessOption: none(),
       );
       return; // quit
     }
-
     state = state.copyWith(
       showErrorMessages: false,
       isSubmitting: true,
-      emailAddress: EmailAddress(''),
     );
-
     await _authFacade.sendPasswordResetEmail(emailAddress);
-
     state = state.copyWith(
       showErrorMessages: false,
       isSubmitting: false,
