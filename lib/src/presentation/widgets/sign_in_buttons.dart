@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lit_firebase_auth/src/domain/auth/value_objects.dart';
 
 import '../core/auth_config.dart';
 import '../core/extensions.dart';
@@ -313,6 +314,31 @@ class EmailAndPasswordSignInButton extends StatelessWidget {
           ),
       onPressed: () {
         context.signInWithEmailAndPassword();
+      },
+    );
+  }
+}
+
+class EmailAndPasswordResetButton extends StatelessWidget {
+  const EmailAndPasswordResetButton({
+    Key key,
+    this.config,
+  }) : super(key: key);
+
+  final ButtonConfig config;
+
+  static const Widget _defaultChild = Text('Reset Password');
+
+  @override
+  Widget build(BuildContext context) {
+    return _SignInButton(
+      config: ButtonConfig.flat(
+        themedata:
+            Theme.of(context).buttonTheme.copyWith(height: defaultButtonHeight),
+        child: _defaultChild,
+      ),
+      onPressed: () {
+        context.sendPasswordResetEmail();
       },
     );
   }

@@ -10,6 +10,8 @@ abstract class AuthFacade {
 
   Stream<User> get onAuthStateChanged;
 
+  Future<void> sendPasswordResetEmail(EmailAddress emailAddress);
+
   Future<Auth> registerWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,

@@ -6,6 +6,7 @@ import '../domain/auth/auth_providers.dart';
 import 'core/auth_config.dart';
 import 'widgets/loading.dart';
 import 'widgets/sign_in_buttons.dart';
+import 'widgets/sign_in_buttons.dart';
 import 'widgets/sign_in_form.dart';
 import 'widgets/sign_in_text_fields.dart';
 
@@ -59,6 +60,10 @@ class StandardSignInWidget extends StatelessWidget {
                             config: config?.registerButton,
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: EmailAndPasswordResetButton(),
+                        )
                       ],
                     ),
                   ],

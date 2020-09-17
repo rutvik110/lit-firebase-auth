@@ -44,6 +44,35 @@ class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
     );
   }
 
+  Future<void> sendPasswordResetEmail() async {
+    if (!_authProviders.emailAndPassword) {
+      throw AuthProviderNotEnabled('Email and Password');
+    }
+
+    var emailAddress = state.emailAddress;
+    if (!emailAddress.isValid()) {
+      state = state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        authFailureOrSuccessOption: none(),
+      );
+      return; // quit
+    }
+
+    state = state.copyWith(
+      showErrorMessages: false,
+      isSubmitting: true,
+      emailAddress: EmailAddress(''),
+    );
+
+    await _authFacade.sendPasswordResetEmail(emailAddress);
+
+    state = state.copyWith(
+      showErrorMessages: false,
+      isSubmitting: false,
+    );
+  }
+
   Future<void> registerWithEmailAndPassword() async {
     await _performActionOnAuthFacadeWithEmailAndPassword(
         _authFacade.registerWithEmailAndPassword);

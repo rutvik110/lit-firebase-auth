@@ -64,6 +64,16 @@ class FirebaseAuthFacade implements AuthFacade {
     }
   }
 
+  @override
+  Future<void> sendPasswordResetEmail(EmailAddress emailAddress) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(
+          email: emailAddress.getOrCrash());
+    } catch (e) {
+      print(e);
+    }
+  }
+
   Future<Auth> _webRegisterWithEmailAndPassword(
       {String email, String password}) async {
     try {

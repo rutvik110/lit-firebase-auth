@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
+import 'package:lit_firebase_auth/src/domain/auth/value_objects.dart';
 import 'package:provider/provider.dart';
 
 import '../../application/auth/sign_in_handler/sign_in_handler_state.dart';
@@ -27,6 +28,11 @@ extension AuthContext on BuildContext {
   Future<void> registerWithEmailAndPassword() async {
     Provider.of<SignInHandlerStateNotifier>(this, listen: false)
         .registerWithEmailAndPassword();
+  }
+
+  Future<void> sendPasswordResetEmail() async {
+    Provider.of<SignInHandlerStateNotifier>(this, listen: false)
+        .sendPasswordResetEmail();
   }
 
   /// Sign-in the user with email specified by [EmailTextFormField]
