@@ -33,10 +33,10 @@ extension AuthContext on BuildContext {
 
   /// Send a Password reset email
   Future<PasswordResetFailure> sendPasswordResetEmail(
-    EmailAddress emailAddress,
+    String emailAddress,
   ) async {
     return Provider.of<AuthFacade>(this, listen: false)
-        .sendPasswordResetEmail(emailAddress);
+        .sendPasswordResetEmail(EmailAddress(emailAddress));
   }
 
   /// Sign-in the user with email specified by [EmailTextFormField]
