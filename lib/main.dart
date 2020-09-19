@@ -1,5 +1,7 @@
+import 'package:big2st/bindings/bindings.dart';
 import 'package:big2st/ui/authentication/authentication_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 
 void main() {
@@ -10,7 +12,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      initialBinding: DefaultBindings(),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
