@@ -43,7 +43,8 @@ class Authentication extends StatelessWidget {
               ),
               FlatButton(
                 onPressed: () {
-                  Get.to(PasswordReset());
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => PasswordReset()));
                 },
                 child: Text('Reset Password'),
               )

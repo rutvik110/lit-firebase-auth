@@ -26,7 +26,7 @@ dependencies:
   lit_firebase_auth:
     git:
       url: https://github.com/OutstandingSummer/lit-firebase-auth
-      ref: 0c60d3acede616122cbd09360a7420c7d202681c
+      ref: c21ab2c6f909490162be088ac2ac211f07fe5de8
   get:
 
 

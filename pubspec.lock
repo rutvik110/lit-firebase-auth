@@ -230,8 +230,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "0c60d3acede616122cbd09360a7420c7d202681c"
-      resolved-ref: "0c60d3acede616122cbd09360a7420c7d202681c"
+      ref: c21ab2c6f909490162be088ac2ac211f07fe5de8
+      resolved-ref: c21ab2c6f909490162be088ac2ac211f07fe5de8
       url: "https://github.com/OutstandingSummer/lit-firebase-auth"
     source: git
     version: "0.2.3"
