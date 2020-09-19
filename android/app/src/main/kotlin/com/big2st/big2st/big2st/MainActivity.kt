@@ -1,4 +1,4 @@
-package com.big2st.big2st.big2st
+package com.big2st.big2st
 
 import io.flutter.embedding.android.FlutterActivity
 

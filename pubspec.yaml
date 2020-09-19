@@ -23,6 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  lit_firebase_auth:
+    git:
+      url: https://github.com/OutstandingSummer/lit-firebase-auth
+      ref: 0c60d3acede616122cbd09360a7420c7d202681c
 
 
   # The following adds the Cupertino Icons font to your application.
