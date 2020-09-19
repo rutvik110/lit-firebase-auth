@@ -1,4 +1,6 @@
+import 'package:big2st/ui/authentication/reset_password_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 
 class Authentication extends StatelessWidget {
@@ -38,6 +40,12 @@ class Authentication extends StatelessWidget {
                   context.registerWithEmailAndPassword();
                 },
                 child: Text('Sign Up'),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Get.to(PasswordReset());
+                },
+                child: Text('Reset Password'),
               )
             ],
           ),
