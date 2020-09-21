@@ -11,6 +11,7 @@ import '../domain/auth/auth.dart';
 import '../domain/auth/auth_failure.dart';
 import '../domain/auth/exceptions.dart';
 import '../domain/auth/i_auth_facade.dart';
+import '../domain/auth/password_reset_failure.dart';
 import '../domain/auth/user.dart';
 import '../domain/auth/value_objects.dart';
 
@@ -61,6 +62,29 @@ class FirebaseAuthFacade implements AuthFacade {
         email: emailAddressStr,
         password: passwordStr,
       );
+    }
+  }
+
+  @override
+  Future<PasswordResetFailure> sendPasswordResetEmail(
+      EmailAddress emailAddress) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(
+        email: emailAddress.getOrCrash(),
+      );
+      return const PasswordResetFailure.non();
+    } catch (e) {
+      switch (e.code) {
+        case "ERROR_TOO_MANY_REQUESTS":
+          return const PasswordResetFailure.tooManyRequests();
+        case "ERROR_INVALID_EMAIL":
+          return const PasswordResetFailure.invalidEmailAddress();
+        case "ERROR_USER_NOT_FOUND":
+          return const PasswordResetFailure.userNotFound();
+        default:
+          debugPrint(e.toString());
+          return const PasswordResetFailure.serverError();
+      }
     }
   }
 

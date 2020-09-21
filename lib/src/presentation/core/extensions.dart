@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 import '../../application/auth/sign_in_handler/sign_in_handler_state.dart';
 import '../../application/auth/sign_in_handler/sign_in_handler_state_notifier.dart';
 import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/auth/password_reset_failure.dart';
 import '../../domain/auth/user.dart';
+import '../../domain/auth/value_objects.dart';
 
 extension AuthContext on BuildContext {
   /// Reset the sign in handler form. Clears the email and password from the
@@ -27,6 +29,14 @@ extension AuthContext on BuildContext {
   Future<void> registerWithEmailAndPassword() async {
     Provider.of<SignInHandlerStateNotifier>(this, listen: false)
         .registerWithEmailAndPassword();
+  }
+
+  /// Send a Password reset email
+  Future<PasswordResetFailure> sendPasswordResetEmail(
+    EmailAddress emailAddress,
+  ) async {
+    return Provider.of<AuthFacade>(this, listen: false)
+        .sendPasswordResetEmail(emailAddress);
   }
 
   /// Sign-in the user with email specified by [EmailTextFormField]
