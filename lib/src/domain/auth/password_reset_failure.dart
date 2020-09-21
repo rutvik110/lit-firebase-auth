@@ -4,7 +4,7 @@ part 'password_reset_failure.freezed.dart';
 
 @freezed
 
-/// AuthFailure union which holds the reason for failure
+/// PasswordResetFailure union which holds the reason for failure
 abstract class PasswordResetFailure with _$PasswordResetFailure {
   const factory PasswordResetFailure.tooManyRequests() = TooManyRequests;
   const factory PasswordResetFailure.serverError() = ServerError;
