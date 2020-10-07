@@ -29,6 +29,7 @@ Pre-lit Firebase authentication. It provides a set of convenient utilities and w
   - [Google Sign In for Android](#google-sign-in-for-android)
   - [Google Sign In for iOS](#google-sign-in-for-ios)
     - [iOS additional requirement](#ios-additional-requirement)
+  - [Google Sign in for Web](#google-sign-in-for-web)
   - [Apple Sign In for Android](#apple-sign-in-for-android)
   - [Apple Sign In for iOS](#apple-sign-in-for-ios)
   - [Twitter Sign In for iOS and Android](#twitter-sign-in-for-ios-and-android)
@@ -67,7 +68,14 @@ Please note that before this package can be used, Firebase Core needs to be init
 
 For a complete example (with Firebase initialization) see the [example](example/) project.
 
-Or take a look at a [live demo](https://funwithflutter.github.io/lit_firebase_example/). Note that this video was recorded with the old version of FlutterFire and Lit Firebase Auth. As such, some configuration may be different. For example, this does not show how to initialize FlutterFire.
+Or take a look at a [live demo](https://funwithflutter.github.io/lit_firebase_example/). 
+
+Some videos on Lit Firebase:
+[Introduction](https://www.youtube.com/watch?v=66TKtvgjFa8)
+
+Note that this video was recorded with the old version of FlutterFire and Lit Firebase Auth. As such, some configuration may be different. For example, this does not show how to initialize FlutterFire.
+
+[Customizing Lit Firebase UI](https://www.youtube.com/watch?v=bpvpbQF-2Js)
 
 ## Platform Configuration
 
@@ -88,6 +96,9 @@ platform :ios, '8.0'
 You can find this at the top of the `Podfile`.
 
 ### Web integration
+Follow normal [Firebase Initialization](https://firebase.flutter.dev/docs/installation/web)
+
+The above should be sufficient, and should provide up to date information. But for additional information, please see below:
 
 You'll need to modify the `web/index.html` of your app following the Firebase setup instructions:
 
@@ -236,17 +247,30 @@ RaisedButton(
 ```
 
 ### Get current user
-Get the current signed-in user:
+Depending on the status of the user you'll get a different state: empty, initializing, or success.
+
 ```dart
-final user = context.getSignedInUser()
+final litUser = context.getSignedInUser();
+litUser.when(
+  (user) => print(user.uid),
+  empty: () {},
+  initializing: () {},
+);
 ```
 
+The `value.user` is the Firebase `User` object.
+
 ### Watch user for changes
-Watches the `User` object for changes.
+Watches the Firebase `User` object for changes. Will be triggered every time the Firebase `User` changes (for example, on logout or new sign in).
 ```dart
-final user = context.watchSignedInUser()
+final litUser = context.watchSignedInUser();
+litUser.when(
+  (user) => Text('Signed in ${user.uid}'),
+  empty: () => Text('Not signed in'),
+  initializing: () => Text('Loading'),
+);
 ```
-Should only be used in the build method.
+The above should only be used in the build method. If you need direct access to the current user, prefer `context.getSignedInUser()`.
 
 ### Determine if submitting is active
  Whether Lit Firebase is currently attempting to authenticate. Can be used to show a loading indicator.
@@ -312,6 +336,22 @@ Then add the `CFBundleURLTypes` attributes below into the `[my_project]/ios/Runn
 Note that according to https://developer.apple.com/sign-in-with-apple/get-started,
 starting June 30, 2020, apps that use login services must also offer a "Sign in
 with Apple" option when submitting to the Apple App Store.
+
+### Google Sign in for Web
+
+You will need to add the Google Sign in Client ID to your `index.html` file. You can get this ID from the Firebase console, within the Google Sign-in Web Configuration (Authentication section).
+
+An example is below:
+
+`web/index.html`
+```html
+...
+<body>
+
+  <!-- GOOGLE SignIn Client ID -->
+  <meta name="google-signin-client_id" content="ADD-YOUR-CLIENT-ID.apps.googleusercontent.com">
+...
+```
 
 ### Apple Sign In for Android
 This should be working, but has not been tested. There should be configuration examples in the Firebase documentation.
