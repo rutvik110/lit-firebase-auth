@@ -15,12 +15,12 @@ abstract class AuthFacade {
       EmailAddress emailAddress);
 
   Future<Auth> registerWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   });
   Future<Auth> signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   });
   Future<Auth> signInWithGoogle();
   Future<Auth> signInWithCredential(AuthCredential credential);

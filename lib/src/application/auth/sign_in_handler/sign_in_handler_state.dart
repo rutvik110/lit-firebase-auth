@@ -9,11 +9,11 @@ part 'sign_in_handler_state.freezed.dart';
 @freezed
 abstract class SignInHandlerState with _$SignInHandlerState {
   const factory SignInHandlerState({
-    @required EmailAddress emailAddress,
-    @required Password password,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Auth> authFailureOrSuccessOption,
+    required EmailAddress emailAddress,
+    required Password password,
+    required bool showErrorMessages,
+    required bool isSubmitting,
+    required Option<Auth> authFailureOrSuccessOption,
   }) = _SignInHandlerState;
 
   factory SignInHandlerState.initial() => SignInHandlerState(

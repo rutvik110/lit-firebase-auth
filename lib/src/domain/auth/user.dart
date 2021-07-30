@@ -5,7 +5,7 @@ part 'user.freezed.dart';
 
 @freezed
 abstract class LitUser with _$LitUser {
-  const factory LitUser({@required User user}) = _LitUser;
+  const factory LitUser({required User user}) = _LitUser;
   const factory LitUser.empty() = _Empty;
   const factory LitUser.initializing() = _Initializing;
 }

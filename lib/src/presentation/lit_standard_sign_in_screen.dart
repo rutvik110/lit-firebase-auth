@@ -11,11 +11,11 @@ import 'widgets/sign_in_text_fields.dart';
 
 class StandardSignInWidget extends StatelessWidget {
   const StandardSignInWidget({
-    Key key,
+    Key? key,
     this.config,
   }) : super(key: key);
 
-  final AuthConfig config;
+  final AuthConfig? config;
 
   static const maxWidth = 500.0;
 
@@ -85,11 +85,11 @@ class StandardSignInWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(4.0),
                 child: config?.googleButton?.map(
                       (c) => SignInWithGoogleButton(
-                        config: c?.config,
+                        config: c.config,
                       ),
-                      dark: (c) => SignInWithGoogleButton.dark(label: c?.label),
+                      dark: (c) => SignInWithGoogleButton.dark(label: c.label),
                       light: (c) =>
-                          SignInWithGoogleButton.light(label: c?.label),
+                          SignInWithGoogleButton.light(label: c.label),
                     ) ??
                     SignInWithGoogleButton.dark(),
               ),
@@ -97,10 +97,10 @@ class StandardSignInWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: config?.appleButton?.map(
-                      (c) => SignInWithAppleButton(config: c?.config),
-                      dark: (c) => SignInWithAppleButton.dark(label: c?.label),
+                      (c) => SignInWithAppleButton(config: c.config),
+                      dark: (c) => SignInWithAppleButton.dark(label: c.label),
                       light: (c) =>
-                          SignInWithAppleButton.light(label: c?.label),
+                          SignInWithAppleButton.light(label: c.label),
                     ) ??
                     SignInWithAppleButton.dark(),
               ),

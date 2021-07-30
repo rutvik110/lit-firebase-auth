@@ -9,22 +9,22 @@ part 'auth_config.freezed.dart';
 /// The UI configuration when using the standard [LitAuth] widget.
 abstract class AuthConfig with _$AuthConfig {
   const factory AuthConfig({
-    Widget title,
-    ButtonConfig signInButton,
-    ButtonConfig registerButton,
-    ButtonConfig anonymousButton,
-    GoogleButtonConfig googleButton,
-    AppleButtonConfig appleButton,
-    ButtonConfig githubButton,
-    ButtonConfig twitterButton,
-    TextFieldConfig emailTextField,
-    TextFieldConfig passwordTextField,
+    Widget? title,
+    ButtonConfig? signInButton,
+    ButtonConfig? registerButton,
+    ButtonConfig? anonymousButton,
+    GoogleButtonConfig? googleButton,
+    AppleButtonConfig? appleButton,
+    ButtonConfig? githubButton,
+    ButtonConfig? twitterButton,
+    TextFieldConfig? emailTextField,
+    TextFieldConfig? passwordTextField,
   }) = _AuthConfig;
 }
 
 class TextFieldConfig {
-  final TextStyle style;
-  final InputDecoration inputDecoration;
+  final TextStyle? style;
+  final InputDecoration? inputDecoration;
 
   TextFieldConfig({
     this.style,
@@ -37,22 +37,22 @@ class TextFieldConfig {
 /// Specify different button types. For example [ButtonConfig.raised()]
 abstract class ButtonConfig with _$ButtonConfig {
   const factory ButtonConfig.raised({
-    @required ButtonThemeData themedata,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget child,
   }) = ButtonConfigRaised;
   const factory ButtonConfig.flat({
-    @required ButtonThemeData themedata,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget child,
   }) = ButtonConfigFlat;
   const factory ButtonConfig.flatIcon({
-    @required ButtonThemeData themedata,
-    @required Widget icon,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget icon,
+    required Widget child,
   }) = ButtonConfigFlatIcon;
   const factory ButtonConfig.raisedIcon({
-    @required ButtonThemeData themedata,
-    @required Widget icon,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget icon,
+    required Widget child,
   }) = ButtonConfigRaisedIcon;
 }
 
@@ -60,9 +60,9 @@ abstract class ButtonConfig with _$ButtonConfig {
 
 /// Configuration for sign in with Apple button
 abstract class AppleButtonConfig with _$AppleButtonConfig {
-  const factory AppleButtonConfig({ButtonConfig config}) = _AppleButtonConfig;
-  const factory AppleButtonConfig.dark({Widget label}) = _AppleButtonConfigDark;
-  const factory AppleButtonConfig.light({Widget label}) =
+  const factory AppleButtonConfig({ButtonConfig? config}) = _AppleButtonConfig;
+  const factory AppleButtonConfig.dark({Widget? label}) = _AppleButtonConfigDark;
+  const factory AppleButtonConfig.light({Widget? label}) =
       _AppleButtonConfigLight;
 }
 
@@ -70,9 +70,9 @@ abstract class AppleButtonConfig with _$AppleButtonConfig {
 
 /// Configuration for sign in with Google button
 abstract class GoogleButtonConfig with _$GoogleButtonConfig {
-  const factory GoogleButtonConfig({ButtonConfig config}) = _GoogleButtonConfig;
-  const factory GoogleButtonConfig.dark({Widget label}) =
+  const factory GoogleButtonConfig({ButtonConfig? config}) = _GoogleButtonConfig;
+  const factory GoogleButtonConfig.dark({Widget? label}) =
       _GoogleButtonConfigDark;
-  const factory GoogleButtonConfig.light({Widget label}) =
+  const factory GoogleButtonConfig.light({Widget? label}) =
       _GoogleButtonConfigLight;
 }

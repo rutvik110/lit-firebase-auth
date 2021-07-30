@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'auth_providers.dart';
 
@@ -9,10 +9,13 @@ part of 'auth_providers.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
 class _$AuthProvidersTearOff {
   const _$AuthProvidersTearOff();
 
-// ignore: unused_element
   _AuthProviders call(
       {bool emailAndPassword = true,
       bool anonymous = false,
@@ -31,20 +34,24 @@ class _$AuthProvidersTearOff {
   }
 }
 
-// ignore: unused_element
+/// @nodoc
 const $AuthProviders = _$AuthProvidersTearOff();
 
+/// @nodoc
 mixin _$AuthProviders {
-  bool get emailAndPassword;
-  bool get anonymous;
-  bool get google;
-  bool get apple;
-  bool get github;
-  bool get twitter;
+  bool get emailAndPassword => throw _privateConstructorUsedError;
+  bool get anonymous => throw _privateConstructorUsedError;
+  bool get google => throw _privateConstructorUsedError;
+  bool get apple => throw _privateConstructorUsedError;
+  bool get github => throw _privateConstructorUsedError;
+  bool get twitter => throw _privateConstructorUsedError;
 
-  $AuthProvidersCopyWith<AuthProviders> get copyWith;
+  @JsonKey(ignore: true)
+  $AuthProvidersCopyWith<AuthProviders> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
+/// @nodoc
 abstract class $AuthProvidersCopyWith<$Res> {
   factory $AuthProvidersCopyWith(
           AuthProviders value, $Res Function(AuthProviders) then) =
@@ -58,6 +65,7 @@ abstract class $AuthProvidersCopyWith<$Res> {
       bool twitter});
 }
 
+/// @nodoc
 class _$AuthProvidersCopyWithImpl<$Res>
     implements $AuthProvidersCopyWith<$Res> {
   _$AuthProvidersCopyWithImpl(this._value, this._then);
@@ -68,26 +76,43 @@ class _$AuthProvidersCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAndPassword = freezed,
-    Object anonymous = freezed,
-    Object google = freezed,
-    Object apple = freezed,
-    Object github = freezed,
-    Object twitter = freezed,
+    Object? emailAndPassword = freezed,
+    Object? anonymous = freezed,
+    Object? google = freezed,
+    Object? apple = freezed,
+    Object? github = freezed,
+    Object? twitter = freezed,
   }) {
     return _then(_value.copyWith(
       emailAndPassword: emailAndPassword == freezed
           ? _value.emailAndPassword
-          : emailAndPassword as bool,
-      anonymous: anonymous == freezed ? _value.anonymous : anonymous as bool,
-      google: google == freezed ? _value.google : google as bool,
-      apple: apple == freezed ? _value.apple : apple as bool,
-      github: github == freezed ? _value.github : github as bool,
-      twitter: twitter == freezed ? _value.twitter : twitter as bool,
+          : emailAndPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
+      anonymous: anonymous == freezed
+          ? _value.anonymous
+          : anonymous // ignore: cast_nullable_to_non_nullable
+              as bool,
+      google: google == freezed
+          ? _value.google
+          : google // ignore: cast_nullable_to_non_nullable
+              as bool,
+      apple: apple == freezed
+          ? _value.apple
+          : apple // ignore: cast_nullable_to_non_nullable
+              as bool,
+      github: github == freezed
+          ? _value.github
+          : github // ignore: cast_nullable_to_non_nullable
+              as bool,
+      twitter: twitter == freezed
+          ? _value.twitter
+          : twitter // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$AuthProvidersCopyWith<$Res>
     implements $AuthProvidersCopyWith<$Res> {
   factory _$AuthProvidersCopyWith(
@@ -103,6 +128,7 @@ abstract class _$AuthProvidersCopyWith<$Res>
       bool twitter});
 }
 
+/// @nodoc
 class __$AuthProvidersCopyWithImpl<$Res>
     extends _$AuthProvidersCopyWithImpl<$Res>
     implements _$AuthProvidersCopyWith<$Res> {
@@ -115,25 +141,43 @@ class __$AuthProvidersCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAndPassword = freezed,
-    Object anonymous = freezed,
-    Object google = freezed,
-    Object apple = freezed,
-    Object github = freezed,
-    Object twitter = freezed,
+    Object? emailAndPassword = freezed,
+    Object? anonymous = freezed,
+    Object? google = freezed,
+    Object? apple = freezed,
+    Object? github = freezed,
+    Object? twitter = freezed,
   }) {
     return _then(_AuthProviders(
       emailAndPassword: emailAndPassword == freezed
           ? _value.emailAndPassword
-          : emailAndPassword as bool,
-      anonymous: anonymous == freezed ? _value.anonymous : anonymous as bool,
-      google: google == freezed ? _value.google : google as bool,
-      apple: apple == freezed ? _value.apple : apple as bool,
-      github: github == freezed ? _value.github : github as bool,
-      twitter: twitter == freezed ? _value.twitter : twitter as bool,
+          : emailAndPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
+      anonymous: anonymous == freezed
+          ? _value.anonymous
+          : anonymous // ignore: cast_nullable_to_non_nullable
+              as bool,
+      google: google == freezed
+          ? _value.google
+          : google // ignore: cast_nullable_to_non_nullable
+              as bool,
+      apple: apple == freezed
+          ? _value.apple
+          : apple // ignore: cast_nullable_to_non_nullable
+              as bool,
+      github: github == freezed
+          ? _value.github
+          : github // ignore: cast_nullable_to_non_nullable
+              as bool,
+      twitter: twitter == freezed
+          ? _value.twitter
+          : twitter // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
+
+/// @nodoc
 
 class _$_AuthProviders implements _AuthProviders {
   const _$_AuthProviders(
@@ -142,13 +186,7 @@ class _$_AuthProviders implements _AuthProviders {
       this.google = false,
       this.apple = false,
       this.github = false,
-      this.twitter = false})
-      : assert(emailAndPassword != null),
-        assert(anonymous != null),
-        assert(google != null),
-        assert(apple != null),
-        assert(github != null),
-        assert(twitter != null);
+      this.twitter = false});
 
   @JsonKey(defaultValue: true)
   @override
@@ -204,6 +242,7 @@ class _$_AuthProviders implements _AuthProviders {
       const DeepCollectionEquality().hash(github) ^
       const DeepCollectionEquality().hash(twitter);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthProvidersCopyWith<_AuthProviders> get copyWith =>
       __$AuthProvidersCopyWithImpl<_AuthProviders>(this, _$identity);
@@ -219,17 +258,19 @@ abstract class _AuthProviders implements AuthProviders {
       bool twitter}) = _$_AuthProviders;
 
   @override
-  bool get emailAndPassword;
+  bool get emailAndPassword => throw _privateConstructorUsedError;
   @override
-  bool get anonymous;
+  bool get anonymous => throw _privateConstructorUsedError;
   @override
-  bool get google;
+  bool get google => throw _privateConstructorUsedError;
   @override
-  bool get apple;
+  bool get apple => throw _privateConstructorUsedError;
   @override
-  bool get github;
+  bool get github => throw _privateConstructorUsedError;
   @override
-  bool get twitter;
+  bool get twitter => throw _privateConstructorUsedError;
   @override
-  _$AuthProvidersCopyWith<_AuthProviders> get copyWith;
+  @JsonKey(ignore: true)
+  _$AuthProvidersCopyWith<_AuthProviders> get copyWith =>
+      throw _privateConstructorUsedError;
 }

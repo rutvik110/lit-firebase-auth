@@ -10,14 +10,11 @@ import '../../../domain/auth/i_auth_facade.dart';
 import '../../../domain/auth/value_objects.dart';
 import 'sign_in_handler_state.dart';
 
-class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
-    with LocatorMixin {
+class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState> with LocatorMixin {
   SignInHandlerStateNotifier({
-    @required AuthProviders authProviders,
-    @required AuthFacade authFacade,
-  })  : assert(authProviders != null),
-        assert(authFacade != null),
-        _authProviders = authProviders,
+    required AuthProviders authProviders,
+    required AuthFacade authFacade,
+  })  : _authProviders = authProviders,
         _authFacade = authFacade,
         super(SignInHandlerState.initial());
 
@@ -45,13 +42,11 @@ class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
   }
 
   Future<void> registerWithEmailAndPassword() async {
-    await _performActionOnAuthFacadeWithEmailAndPassword(
-        _authFacade.registerWithEmailAndPassword);
+    await _performActionOnAuthFacadeWithEmailAndPassword(_authFacade.registerWithEmailAndPassword);
   }
 
   Future<void> signInWithEmailAndPassword() async {
-    await _performActionOnAuthFacadeWithEmailAndPassword(
-        _authFacade.signInWithEmailAndPassword);
+    await _performActionOnAuthFacadeWithEmailAndPassword(_authFacade.signInWithEmailAndPassword);
   }
 
   Future<void> signInWithGoogle() async {
@@ -124,8 +119,8 @@ class SignInHandlerStateNotifier extends StateNotifier<SignInHandlerState>
 
   Future<void> _performActionOnAuthFacadeWithEmailAndPassword(
     Future<Auth> Function({
-      @required EmailAddress emailAddress,
-      @required Password password,
+      required EmailAddress emailAddress,
+      required Password password,
     })
         forwardedCall,
   ) async {

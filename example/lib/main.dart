@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({
-    Key key,
+    Key key?,
   }) : super(key: key);
 
   @override
